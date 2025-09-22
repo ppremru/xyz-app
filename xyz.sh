@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BUILD_VERSION=v1.0.99
+BUILD_VERSION=v1.0.0
 YOU=ppremru
 
 # build ..
@@ -22,3 +22,8 @@ podman rm xyz-app
 # Registry deeds
 echo "Did you do this already?: podman login quay.io"
 podman push xyz quay.io/${YOU}/xyz:${BUILD_VERSION}
+
+# git chores that will be done after merge ...
+# git tag -a $BUILD_VERSION -m "Release version ${BUILD_VERSION}"
+# git push origin $BUILD_VERSION
+
