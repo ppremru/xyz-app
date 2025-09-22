@@ -1,11 +1,11 @@
 #!/bin/bash
 
-BUILD_VERSION=v1.0.0
+TAG=v1.0.0
 YOU=ppremru
 
 # build ..
 podman build -t xyz .
-podman run -p 8080:8080 --name xyz-app -d -e APP_VERSION=${BUILD_VERSION} xyz
+podman run -p 8080:8080 --name xyz-app -d -e TAG=${TAG} xyz
 podman ps
 
 # test 
@@ -21,9 +21,9 @@ podman rm xyz-app
 
 # Registry deeds
 echo "Did you do this already?: podman login quay.io"
-podman push xyz quay.io/${YOU}/xyz:${BUILD_VERSION}
+podman push xyz quay.io/${YOU}/xyz:${TAG}
 
-# git chores that will be done after merge ...
-# git tag -a $BUILD_VERSION -m "Release version ${BUILD_VERSION}"
-# git push origin $BUILD_VERSION
+# some git chores that might be done ...
+# git tag -a $TAG -m "Release version ${TAG}"
+# git push origin $TAG
 

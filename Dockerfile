@@ -15,7 +15,7 @@ COPY xyz.py .
 EXPOSE 8080
 
 # Define environment variable for the version
-ENV APP_VERSION="1.0.0"
+ENV TAG="default"
 
 # Run the application
 CMD ["python", "xyz.py"]

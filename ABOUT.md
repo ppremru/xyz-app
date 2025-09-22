@@ -15,7 +15,7 @@ Simple source files (app.py, requirements.txt, and Dockerfile) form the basic bu
 
 *Simplicity*: It's a minimal example, easy for non-programmers to understand and programmers can focus on the workflow.
 *Container-ready*: The code is designed to run in a container, listening on all network interfaces (host='0.0.0.0') on a standard port.
-*CI/CD Integration*: It uses an environment variable (APP_VERSION) to set the version. Your CI pipeline can inject the version number (e.g., from a Git tag or a build number) at build time, demonstrating a key part of the CI process.
+*CI/CD Integration*: It uses an environment variable (TAG) to view the version. Your CI pipeline can inject the version number (e.g., from a Git tag or a build number) at build time, demonstrating a key part of the CI process.
 
 ## Deploy on OpenShift or bust!
 
