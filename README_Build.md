@@ -1,12 +1,10 @@
-# Containerize ...
+# Build that image .
 
-Just an easy peasy example of the CI flow ...
+Just an easy peasy example of building and running an image with podman.
 
 ## Local Build and Test
 
 To build and run your xyz.py application locally in a container with Podman, you'll follow a two-step process: first, build the container image from your Dockerfile, then run a container from that image.
-
-To build and run your `xyz.py` application locally in a container with **Podman**, you'll follow a two-step process: first, build the container image from your `Dockerfile`, then run a container from that image.
 
 ### 1\. Build the Container Image
 
@@ -45,7 +43,7 @@ To verify the application is working, open a new terminal and use `curl` to send
 curl http://localhost:8080
 ```
 
-You should see the output: `Hello, World! This is version 1.0.0.`
+You should see the output: `Message: Hello from podman`
 
 -----
 
