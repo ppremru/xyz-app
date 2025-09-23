@@ -6,7 +6,7 @@ TAG := v1.0.0
 MESSAGE := "Hello from podman"
 
 # The default target that runs when you type 'make'
-all: build run
+all: build run test
 
 .PHONY: build run stop test push clean
 
@@ -16,7 +16,7 @@ build:
 
 ## Run the container in detached mode
 run:
-	podman run -p 8080:8080 -e MESSAGE="${MESSAGE}" --name $(APP_CONTAINER_NAME) -d $(APP_NAME)
+	podman run -p 8080:8080 -e MESSAGE=${MESSAGE} --name $(APP_CONTAINER_NAME) -d localhost/$(APP_NAME):latest
 
 ## Stop the running container
 stop:
@@ -26,6 +26,8 @@ stop:
 test:
 	@echo "Testing the application..."
 	curl http://localhost:8080
+	@echo ""
+
 
 ## Push the tagged image to the registry
 push:
@@ -34,3 +36,4 @@ push:
 ## Clean up by stopping and removing the container
 clean: stop
 	podman rm $(APP_CONTAINER_NAME)
+	podman system prune --all
