@@ -1,4 +1,4 @@
-# Basis Examples of Steps
+# Very Basic Examples of Workflow Steps
 
 Just an easy peasy example of the CI flow ... these are the manual steps, most likely they would be part of a Jenkin's workflow ...
 
@@ -6,11 +6,11 @@ Experiment with tools:
 * Podman (download on your local host)
 * Quay.io (create an account to experiment with)
 
-## First Step:  Local Build and Test
+## First Step:  Build and Test
 
 To build and run your xyz.py application locally in a container with Podman, you'll follow a two-step process: first, build the container image from your Dockerfile, then run a container from that image.
 
-To build and run your `xyz.py` application locally in a container with **Podman**, you'll follow a two-step process: first, build the container image from your `Dockerfile`, then run a container from that image.
+To build and run your `xyz.py` application in a container with **Podman**, you'll follow a two-step process: first, build the container image from your `Dockerfile`, then run a container from that image.
 
 ### 1\. Build the Container Image
 
