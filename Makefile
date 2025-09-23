@@ -2,11 +2,11 @@
 APP_NAME := xyz
 APP_CONTAINER_NAME := $(APP_NAME)-app
 REPO := quay.io/ppremru/$(APP_NAME)
-TAG := v1.0.0
+TAG := v1.0.1
 MESSAGE := "Hello from podman"
 
 # The default target that runs when you type 'make'
-all: build run test
+all: clean build run test push
 
 .PHONY: build run stop test push clean
 
@@ -20,7 +20,7 @@ run:
 
 ## Stop the running container
 stop:
-	podman stop $(APP_CONTAINER_NAME)
+	-podman stop $(APP_CONTAINER_NAME)
 
 ## Test the running application
 test:
@@ -35,5 +35,5 @@ push:
 
 ## Clean up by stopping and removing the container
 clean: stop
-	podman rm $(APP_CONTAINER_NAME)
-	podman system prune --all
+	-podman rm $(APP_CONTAINER_NAME)
+	-podman system prune --all
