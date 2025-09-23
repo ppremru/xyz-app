@@ -1,4 +1,4 @@
-# More on the CI Life
+# Store the Image
 
 The next logical step after **build the production-ready image** is to **push it to the container registry**.   
 Having it in a registry, makes the image available for your OpenShift cluster to pull for deployment.
