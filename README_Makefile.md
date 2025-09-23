@@ -1,6 +1,6 @@
 # Makefile Life
 
-There is a basic `Makefile` tailored for your `xyz` application.   
+There is a basic `Makefile` tailored for your manual steps to work with your `xyz` application.   
 
 This file automates the common tasks of building, running, and managing your container.
 
