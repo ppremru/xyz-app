@@ -16,7 +16,8 @@ Prepare your world:
 * Install Podman on your desktop (CLI)
 * And of course, get your git life together
 * And Helm
-* Setup a basic account on [Quay.io](https://quay.io/repository/Quay.io) 
+* Setup a basic account on [Quay.io](https://quay.io/repository/Quay.io)
+* .. and make (opt'l)
 
 ## Why this code?
 
