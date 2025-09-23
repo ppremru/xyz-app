@@ -1,10 +1,10 @@
-# Build that image .
+# Build and Test Image
 
 Just an easy peasy example of building and running an image with podman.
 
-## Local Build and Test
+## The Podman Life
 
-To build and run your xyz.py application locally in a container with Podman, you'll follow a two-step process: first, build the container image from your Dockerfile, then run a container from that image.
+To build and run your xyz.py application locally in a container with Podman, you'll follow a three-step process: first, build the container image from your Dockerfile, then run a container from that image.  And lastly, clean up ...
 
 ### 1\. Build the Container Image
 
@@ -58,4 +58,4 @@ podman rm xyz-app
 
 ## Conclusion
 
-Excellent, that's a key milestone. You've now confirmed the first step of your CI workflow is working via the local build.
+Excellent, that's a key milestone. You've now confirmed the first step of your CI workflow via a local build.
