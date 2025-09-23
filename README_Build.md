@@ -6,6 +6,8 @@ Just an easy peasy example of building and running an image with podman.
 
 To build and run your xyz.py application locally in a container with Podman, you'll follow a three-step process: first, build the container image from your Dockerfile, then run a container from that image.  And lastly, clean up ...
 
+-----
+
 ### Step 1: Build the Container Image
 
 Navigate to the directory containing your `app.py`, `requirements.txt`, and `Dockerfile`. Then, use the `podman build` command to create the image and tag it with the name `xyz`.
