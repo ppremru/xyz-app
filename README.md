@@ -1,8 +1,12 @@
-# CI Life
+# Basis Examples of Steps
 
-Just an easy peasy example of the CI flow ...
+Just an easy peasy example of the CI flow ... these are the manual steps, most likely they would be part of a Jenkin's workflow ...
 
-## Local Build and Test
+Experiment with tools:
+* Podman (download on your local host)
+* Quay.io (create an account to experiment with)
+
+## First Step:  Local Build and Test
 
 To build and run your xyz.py application locally in a container with Podman, you'll follow a two-step process: first, build the container image from your Dockerfile, then run a container from that image.
 
@@ -23,7 +27,7 @@ This command instructs Podman to:
 
 -----
 
-### 2\. Run and Test the Application
+### 2\. Run the Image to Test the Container
 
 Once the image is built, you can run a container from it. The `-p` flag is essential to map the container's internal port to your local machine, allowing you to access the web server.
 
@@ -58,7 +62,7 @@ podman stop xyz-app
 podman rm xyz-app
 ```
 
-## Next Step
+## Next Step:  Store Image in a Registry (eg:  Quay)
 
 Excellent, that's a key milestone. You've now confirmed the first step of your CI workflow is working via the local build.
 
@@ -92,6 +96,6 @@ This command does the following:
   * `xyz`: The name of your local image.
   * `quay.io/username/xyz:version`: The **full path** to the destination registry and the new image tag. The `vtest` tag signifies this is the new version your CI pipeline will create.
 
-### Go admire
+### Admire your Deeds
 
-Login to quay.io with your id, and confirm the image is tagged.  ALSO, go to the settings and make it public.
+Login to quay.io with your id, and confirm the image is tagged.  ALSO, go to the settings and change the image to public access.  (If you skip this step, failure will happen in the CD steps...)
