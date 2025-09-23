@@ -1,28 +1,9 @@
-# Application XYZ
+# Containerize ...
 
-Simple file set to form a basic workflow from source to image to deploy on OpenShift using Helm via ArgoCD.
+Just an easy peasy example of the CI flow ...
 
-## Heads-up
+## Local Build and Test
 
-You need:
-* Podman
-* Quay.io setup
-* git repo 
-
-## Why this code?
-
-Simple source files (app.py, requirements.txt, and Dockerfile) form the basic building blocks for the CI steps of your pipeline. 
-
-*Simplicity*: It's a minimal example, easy for non-programmers to understand and programmers can focus on the workflow.
-*Container-ready*: The code is designed to run in a container, listening on all network interfaces (host='0.0.0.0') on a standard port.
-*CI/CD Integration*: It uses an environment variable (TAG) to view the version. Your CI pipeline can inject the version number (e.g., from a Git tag or a build number) at build time, demonstrating a key part of the CI process.
-
-## Deploy on OpenShift or bust!
-
-The next stage would be to create the Helm chart and ArgoCD configuration for the CD steps.
-
-
-## Local
 To build and run your xyz.py application locally in a container with Podman, you'll follow a two-step process: first, build the container image from your Dockerfile, then run a container from that image.
 
 To build and run your `xyz.py` application locally in a container with **Podman**, you'll follow a two-step process: first, build the container image from your `Dockerfile`, then run a container from that image.
@@ -77,4 +58,6 @@ podman stop xyz-app
 podman rm xyz-app
 ```
 
+## Conclusion
 
+Excellent, that's a key milestone. You've now confirmed the first step of your CI workflow is working via the local build.

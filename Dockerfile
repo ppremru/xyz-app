@@ -15,7 +15,7 @@ COPY xyz.py .
 EXPOSE 8080
 
 # Define environment variable for the version
-ENV TAG="default"
+ENV MESSAGE="message from Dockerfile"
 
 # Run the application
 CMD ["python", "xyz.py"]
