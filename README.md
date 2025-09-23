@@ -1,18 +1,21 @@
-# Very Basic Examples of Workflow Steps for a very simple application 
+# Very Basic Application to Demonstrate Workflow 
 
-Just an easy peasy example of the manual steps from code to deployment.  This repo is about the code and the image, these steps would most likey be part of a CI integration (eg: Jenkins).
+An easy peasy example of the manual steps from code to deployment.  
+Build some code, run it in an image, push the image to an image-registry.  
+Manual steps that will be you CI Integration (eg:  Jenkin's).
 
 ## Heads-up
 
-Two git repositories:
+Two git SIMPLE repositories:
 
-1. xyz-app:     Simple, very simple, python application used to demonstrate a basic workflow from source to image. 
-2. xyz-gitops:  Simple, very simple, helm charts to use with with argoCD on OpenShift.
+1. xyz-app:     Application Code (python, Dockerfile)  Simple, very simple, python application used to demonstrate a basic workflow from source to image. 
+2. xyz-gitops:  Helm Charts to manage the deployment, service and routes in Openshift (ultimately for ArgoCD to poll.)
 
 Prepare your world:
 
 * Install Podman on your desktop (CLI)
 * And of course, get your git life together
+* And Helm
 * Setup a basic account on [Quay.io](https://quay.io/repository/Quay.io) 
 
 ## Why this code?
