@@ -1,23 +1,26 @@
 # Very Basic Application to Demonstrate Workflow 
 
-An easy peasy example of the manual steps from code to deployment.  
-Build some code, run it in an image, push the image to an image-registry.  
+An easy-peasy example of the manual steps from code to deployment.  
+
+1.   build an image and run it (podman)
+2.   push the image to an image-registry (quay.io)
+
 Manual steps that will be you CI Integration (eg:  Jenkin's).
 
 ## Heads-up
 
-Two git SIMPLE repositories:
+Refer to these TWO git repositories:
 
 1. xyz-app:     Application Code (python, Dockerfile)  Simple, very simple, python application used to demonstrate a basic workflow from source to image. 
 2. xyz-gitops:  Helm Charts to manage the deployment, service and routes in Openshift (ultimately for ArgoCD to poll.)
 
-Prepare your world:
+Prepare your host with tools to experiment with:
 
-* Install Podman on your desktop (CLI)
+* Install Podman (CLI)
 * And of course, get your git life together
-* And Helm
-* Setup a basic account on [Quay.io](https://quay.io/repository/Quay.io)
-* .. and make (opt'l)
+* Setup an image registry , [Quay.io](https://quay.io/repository/Quay.io)
+* Install Helm 
+* .. and optionally install make
 
 ## Why this code?
 
