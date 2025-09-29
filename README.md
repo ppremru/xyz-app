@@ -38,6 +38,8 @@ Simple source files (app.py, requirements.txt, and Dockerfile) form the basic bu
 
 ## Diagram Rough Draft 
 
+This diagram is a simplistic view into the workflow. 
+
 ```mermaid
 ---
 title: Oversimplified Workflow
@@ -81,7 +83,7 @@ flowchart TB
         direction TB
         subgraph buildimage[Manage Image]
             direction LR
-            buildimage0[Git Workflow] --> buildimage1[Podman Build Image]
+            buildimage0[Git Clone] --> buildimage1[Podman Build Image]
             buildimage1 --> buildimage2[Podman Tag Image]
             buildimage2 --> buildimage3[Podman Login to Quay]
             buildimage3 --> buildimage4[Podman Push Image to Quay]
