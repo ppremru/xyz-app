@@ -96,7 +96,7 @@ flowchart TB
 
     subgraph 2[CD]
         direction TB
-        subgraph OCP[OpenShift - assume GitOps Config]
+        subgraph OCP[OpenShift GitOps]
             direction LR
             OCP1[ArgoCD Sync Git] --> OCP2[ArgoCD Helm Deploy]
         end
