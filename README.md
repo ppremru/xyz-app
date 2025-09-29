@@ -83,14 +83,14 @@ flowchart TB
         direction TB
         subgraph buildimage[Manage Image]
             direction LR
-            buildimage0[Git Clone] --> buildimage1[Podman Build Image]
+            buildimage0[Git Clone Source] --> buildimage1[Podman Build Image]
             buildimage1 --> buildimage2[Podman Tag Image]
             buildimage2 --> buildimage3[Podman Login to Quay]
             buildimage3 --> buildimage4[Podman Push Image to Quay]
         end
         subgraph updateconfig[Update Config]
             direction LR
-            updateimage0[Git Workflow] --> updateimage1[Update Helm Chart]
+            updateimage0[Git Manage Config] --> updateimage1[Update Helm Chart]
         end
         buildimage --> updateconfig
     end
