@@ -74,7 +74,7 @@ flowchart TB
             x0{Apply} --> x1[Git Clone]
             x1 --> x2[OCP Apply]
         end
-        c -- "New or Update ArgoCD GitOps" --> x
+        c --> x
     end
 
     subgraph 1[CI]
@@ -90,7 +90,7 @@ flowchart TB
             direction LR
             updateimage0[Git Workflow] --> updateimage1[Update Helm Chart]
         end
-        buildimage -- "Version Tag" --> updateconfig
+        buildimage --> updateconfig
     end
 
 
