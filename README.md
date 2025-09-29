@@ -35,3 +35,75 @@ Simple source files (app.py, requirements.txt, and Dockerfile) form the basic bu
 * [BuildAndTest](./README_Build.md)
 * [PushToRegistry](./README_Registry.md)
 * [FYSA - Makefile](./README_Makefile.md)
+
+## Diagram Rough Draft 
+
+```mermaid
+---
+title: Oversimplified Workflow
+config:
+  theme: 'base'
+  themeVariables:
+    primaryColor: '#FFFFFFFF'
+    primaryTextColor: '#000000'
+    primaryBorderColor: '#0c0909ff'
+    clusterBkg: '#80808080'
+    lineColor: '#0e0d0dff'
+    secondaryColor: '#80808080'
+---
+flowchart TB
+    subgraph 0[Life of DevOps]
+        direction TB
+        subgraph s[Source Code Git]
+            direction LR
+            s1[Clone] --> s2[Branch]
+            s2 --> s3[Commit]
+            s3 --> s4[Push to Remote]
+            s4 --> s5[Merge to main]
+        end
+        subgraph c[Config Git]
+            direction LR
+            c1[Clone] --> c2[Branch]
+            c2 --> c3[Commit]
+            c3 --> c4[Push to Remote]
+            c4 --> c5[Merge to main]
+        end
+        s -- "Yaml for Helm and ArgoCD" --> c
+        subgraph x[Config OCP]
+            direction LR
+            x0{Apply} --> x1[Git Clone]
+            x1 --> x2[OCP Apply]
+        end
+        c -- "New or Update ArgoCD GitOps" --> x
+    end
+
+    subgraph 1[CI]
+        direction TB
+        subgraph buildimage[Manage Image]
+            direction LR
+            buildimage0[Git Workflow] --> buildimage1[Podman Build Image]
+            buildimage1 --> buildimage2[Podman Tag Image]
+            buildimage2 --> buildimage3[Podman Login to Quay]
+            buildimage3 --> buildimage4[Podman Push Image to Quay]
+        end
+        subgraph updateconfig[Update Config]
+            direction LR
+            updateimage0[Git Workflow] --> updateimage1[Update Helm Chart]
+        end
+        buildimage -- "Version Tag" --> updateconfig
+    end
+
+
+    subgraph 2[CD]
+        direction TB
+        subgraph OCP[OpenShift - assume GitOps Config]
+            direction LR
+            OCP1[ArgoCD Sync Git] --> OCP2[ArgoCD Helm Deploy]
+        end
+    end
+
+    Start((Start)) --> 0
+    0 -- "New Code Available" --> 1
+    1 -- "New Version Available" --> 2
+    2 --> End((End))
+```
