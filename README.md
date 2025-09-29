@@ -52,24 +52,24 @@ config:
     secondaryColor: '#80808080'
 ---
 flowchart TB
-    subgraph 0[Life of DevOps]
+    subgraph 0[Dev and DevOps]
         direction TB
-        subgraph s[Source Code Git]
+        subgraph s[Source Code - Git]
             direction LR
             s1[Clone] --> s2[Branch]
             s2 --> s3[Commit]
             s3 --> s4[Push to Remote]
             s4 --> s5[Merge to main]
         end
-        subgraph c[Config Git]
+        subgraph c[Config Files - Git]
             direction LR
             c1[Clone] --> c2[Branch]
             c2 --> c3[Commit]
             c3 --> c4[Push to Remote]
             c4 --> c5[Merge to main]
         end
-        s -- "Yaml for Helm and ArgoCD" --> c
-        subgraph x[Config OCP]
+        s --> c
+        subgraph x[Config GitOps - OCP]
             direction LR
             x0{Apply} --> x1[Git Clone]
             x1 --> x2[OCP Apply]
